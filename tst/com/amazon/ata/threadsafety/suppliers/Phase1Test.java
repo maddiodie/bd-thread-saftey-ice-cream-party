@@ -16,6 +16,7 @@ import static com.amazon.ata.threadsafety.model.Flavor.CHOCOLATE;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class Phase1Test {
+
     CartonDao cartonDao = new CartonDao();
     FlavorRequestQueue flavorRequestQueue = new FlavorRequestQueue();
 
@@ -40,7 +41,8 @@ public class Phase1Test {
 
         // THEN
         assertEquals(0, flavorRequestQueue.requestCount(),
-            "All requests not fulfilled! " + cartonDao.inventoryOfFlavor(CHOCOLATE) + " completed.");
+            "All requests not fulfilled! " + cartonDao.inventoryOfFlavor(CHOCOLATE)
+                    + " completed.");
     }
 
 }

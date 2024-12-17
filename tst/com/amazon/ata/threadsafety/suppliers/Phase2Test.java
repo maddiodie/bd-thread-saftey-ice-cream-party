@@ -16,6 +16,7 @@ import static com.amazon.ata.threadsafety.model.Flavor.CHOCOLATE;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class Phase2Test {
+
     CartonDao cartonDao = new CartonDao();
     FlavorRequestQueue flavorRequestQueue = new FlavorRequestQueue();
 
@@ -41,7 +42,8 @@ public class Phase2Test {
         // THEN
         // The service processes all the requests without deadlocking
         assertEquals(0, flavorRequestQueue.requestCount(),
-            "All requests not fulfilled! " + cartonDao.inventoryOfFlavor(CHOCOLATE) + " completed.");
+            "All requests not fulfilled! " + cartonDao.inventoryOfFlavor(CHOCOLATE)
+                    + " completed.");
     }
 
 }
